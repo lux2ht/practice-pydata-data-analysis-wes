@@ -1,124 +1,93 @@
 # Python Data Analysis Practice
 
-Data practice notebooks following "Python for Data Analysis, 3rd Edition" by Wes McKinney. This repository contains practical examples and exercises working through the concepts presented in the book.
+Collection of Jupyter notebooks and example data used to practice concepts from "Python for Data Analysis, 3rd Edition" by Wes McKinney. The repository contains notebooks that explore real datasets and demonstrate common data analysis workflows using pandas, NumPy, and visualization libraries.
+
+## Repository layout
+
+- `datasets/` — raw datasets used by the notebooks (babynames, fec, usda_food, movielens, etc.)
+- `examples/` — small example files (CSV/JSON/Excel) used for short exercises and demonstrations
+- `practice/` — Jupyter notebooks and additional practice files
 
 ## Practice Notebooks
 
-The repository includes several Jupyter notebooks that follow different chapters and topics from the book:
+The `practice/` folder contains a number of notebooks and supporting files. Key notebooks include:
 
-1. **Baby Names Analysis** (`baby_name.ipynb`)
-   - Working with the US baby names dataset
-   - Demonstrates data loading, cleaning, and time series analysis
-   - Practice with pandas DataFrame operations
-   - Data visualization with matplotlib and seaborn
-   - Topics: Data manipulation, grouping, and visualization
+- `baby_name.ipynb` — Baby names analysis (US baby names by year)
+- `fed_elec.ipynb` — Federal Elections Analysis (campaign finance data)
+- `usda.ipynb` — USDA food database analysis (nutritional data)
+- `models.ipynb` — Statistical models and numerical analysis
+- `data_analysis.ipynb` — General data analysis examples and exercises
+- `pandas_prac.ipynb` — pandas-focused practice examples
+- `plotting.ipynb` — Visualization examples (matplotlib, seaborn)
+- `time_series_prac.ipynb` — Time series practice and analysis
+- `Numpy_prac.ipynb` — NumPy practice and array operations
+- Other notebooks and supporting files: `build_in_prac.ipynb`, `data wrangling.ipynb`, `data_cleaning.ipynb`, `data_group_prac.ipynb`, `modeling.ipynb`, `prac.ipynb`, `read_write_files.ipynb`.
 
-2. **Federal Elections Analysis** (`fed_elec.ipynb`)
-   - Analysis of campaign finance data
-   - Complex data transformations and aggregations
-   - Working with categorical and numerical data
-   - Topics: Advanced pandas operations and data analysis
-
-3. **USDA Food Database** (`usda.ipynb`)
-   - Nutritional data analysis
-   - Database-style operations in pandas
-   - Data merging and joining
-   - Topics: Data relationships and SQL-like operations
-
-4. **Statistical Models** (`models.ipynb`)
-   - Statistical analysis and modeling
-   - Working with numerical computing in Python
-   - Practice with NumPy and statistical functions
-   - Topics: Statistical analysis and modeling techniques
-
-5. **General Data Analysis** (`data_analysis.ipynb`)
-   - General data analysis techniques
-   - Comprehensive examples of data wrangling
-   - Various data processing methods
-   - Topics: Data cleaning, transformation, and analysis
-
-## Project Structure
-
-```
-.
-├── datasets/               # Collection of datasets
-│   ├── babynames/         # US baby names by year (1880-2010)
-│   ├── bitly_usagov/      # Bitly usage data
-│   ├── fec/               # Federal Election Commission data
-│   ├── haiti/             # Haiti data
-│   ├── movielens/         # MovieLens dataset
-│   ├── mta_perf/          # MTA performance data
-│   ├── titanic/           # Titanic passenger data
-│   └── usda_food/         # USDA food database
-│
-└── examples/              # Example data files for practice
-    ├── CSV files
-    ├── JSON files
-    ├── Excel files
-    └── Other data formats
-```
+Additional files in `practice/` include example spreadsheets and binary arrays used by the notebooks:
+- `ex2.xlsx`, `ex2_2.xlsx`, `array_archive.npz`, `array_compreseed.npz`, `some_array.npy`, `mydata.sqlite`, and a few text files.
 
 ## Datasets
 
-The repository contains several datasets for analysis:
+Datasets used across the notebooks live in the `datasets/` directory. Notable datasets:
 
-1. **Baby Names** (`datasets/babynames/`)
-   - US baby name frequencies from 1880-2010
-   - Data format: yearly text files with name, gender, and count
+- `datasets/babynames/` — US baby name frequencies (1880–2010)
+- `datasets/fec/` — Federal Election Commission campaign finance data
+- `datasets/usda_food/` — USDA food and nutrition data
+- `datasets/movielens/` — MovieLens ratings and metadata
+- `datasets/mta_perf/`, `datasets/titanic/`, and other smaller datasets used for practice
 
-2. **Federal Election Commission** (`datasets/fec/`)
-   - Campaign finance data
+If you plan to re-run notebooks, make sure the `datasets/` folder remains in the repository, and paths inside the notebooks are correct (many notebooks reference relative paths such as `./datasets/fec/...`).
 
-3. **MovieLens** (`datasets/movielens/`)
-   - Movie ratings and metadata
-
-4. **USDA Food Database** (`datasets/usda_food/`)
-   - Nutritional information for various foods
-
-And more datasets are available in the `datasets` directory.
-
-## Example Files
-
-The `examples` directory contains various data files in different formats for practice:
-- CSV files
-- JSON files
-- Excel spreadsheets
-- Time series data
-- And more
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Getting Started
+## Getting started
 
 1. Clone the repository
+
 ```bash
 git clone https://github.com/lux2ht/practice-pydata-data-analysis-wes.git
 cd practice-pydata-data-analysis-wes
 ```
 
-2. Set up your Python environment
+2. Create and activate a Python virtual environment
+
 ```bash
-python -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
-pip install -r requirements.txt
+python3 -m venv venv
+source venv/bin/activate
 ```
 
-3. Launch Jupyter Notebook
+3. Install the typical data science dependencies (adjust to your Python version)
+
+```bash
+pip install pandas numpy matplotlib seaborn jupyter
+```
+
+4. Launch Jupyter Notebook
+
 ```bash
 jupyter notebook
 ```
 
+Open the notebooks in the `practice/` folder to explore the examples.
+
 ## Requirements
 
-- Python 3.x
+- Python 3.8+ recommended
 - pandas
 - numpy
 - matplotlib
 - seaborn
 - jupyter
 
-## Book Reference
+(Optionally install scikit-learn, statsmodels, or other libraries depending on which notebooks you want to run.)
 
-These practice notebooks follow "Python for Data Analysis, 3rd Edition" by Wes McKinney. The examples and exercises are adapted from and inspired by the book's content, with modifications and additional practice scenarios.
+## Notes and Conventions
+
+- Notebooks are intended for learning and experimentation; some cells are exploratory and may assume datasets are present in `datasets/`.
+- Paths in notebooks are relative; if you move notebooks, update the dataset paths accordingly.
+
+## Changelog
+
+- 2025-09-26: Fixed a syntax issue in `practice/fed_elec.ipynb` (corrected import statements in the first code cell). This update is reflected in the "Federal Elections Analysis" notebook entry above.
+
+## License
+
+This project is licensed under the MIT License - see the `LICENSE` file for details.
